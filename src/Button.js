@@ -1,29 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Button extends Component {
+class Button extends React.Component {
 
-	state = {
-		text: ''
-	}
-
-	handleClick() {
-		this.setState({
-			text: 'Ny text'
-		})
+	constructor() {
+		super();
+		this.state= {title: 'Click text'}		
 	}
 
 	render() {
 		return (
 			<div>
-				<button
-					onClick={this.handleClick}
-					style={{backgroundColor:this.state.text}}
-				>Button</button>
+				<button onClick= {() => this.setState({title:'New text'})}>{this.state.title}</button>
 			</div>
 		)
 	}
 };
-
 
 export default Button;
 
