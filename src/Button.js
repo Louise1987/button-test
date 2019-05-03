@@ -1,20 +1,31 @@
 import React from 'react';
+import './App.css';
 
 class Button extends React.Component {
-
-	constructor() {
+constructor() {
 		super();
-		this.state= {title: 'Click text'}		
+		this.state= {title: 'Click button',
+		red: true
+		}		
 	}
 
+handleClick(){
+	console.log('du klickade');
+	this.setState({red: !this.state.red})
+}
+	
+
 	render() {
+		let color_class = this.state.red ? "redButton" : "whiteButton";
 		return (
-			<div>
-				<button onClick= {() => this.setState({title:'New text'})}>{this.state.title}</button>
-			</div>
+			<>
+				<button className={color_class}  onClick= {() => this.setState({title:'New text'})}>{this.state.title}{this.handleClick.bind(this)}</button>
+			</>
 		)
 	}
 };
+
+
 
 export default Button;
 
