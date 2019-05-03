@@ -7,14 +7,33 @@ button{
   height: 40px;
   margin: 15px;
 }
-.blackButton{
-  background-color: black;
-  color: white;
+
+.buttonTrue {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #000;
+  background-color: yellow;
+  border: none;
+  box-shadow: 0 9px #999;
 }
 
-.whiteButton{
-  background-color: white;
-  color: black;
+.buttonFalse {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: red;
+  border: none;
+  box-shadow: 0 9px #999;
 }
 
 

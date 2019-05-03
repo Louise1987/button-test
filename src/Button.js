@@ -5,21 +5,29 @@ class Button extends React.Component {
 constructor() {
 		super();
 		this.state= {title: 'Click button',
-		red: true
+		button: true
 		}		
+		this.handleText = this.handleText.bind(this);
+		this.handleColor = this.handleColor.bind(this);
 	}
 
-handleClick(){
-	console.log('du klickade');
-	this.setState({red: !this.state.red})
+handleText(){
+this.setState({title: this.state.title})
+}
+
+handleColor(){
+	this.setState({button: !this.state.button})
 }
 	
 
 	render() {
-		let color_class = this.state.red ? "redButton" : "whiteButton";
 		return (
 			<>
-				<button className={color_class}  onClick= {() => this.setState({title:'New text'})}>{this.state.title}{this.handleClick.bind(this)}</button>
+				<button
+				 handleText= {this.handleText} onClick= {() => this.setState({title:'New text'})} 
+				 handleColor={this.handleColor ? "buttonTrue": "buttonFalse"} onClick={this.handleColor}>{this.state.title}
+				 </button>
+			
 			</>
 		)
 	}
